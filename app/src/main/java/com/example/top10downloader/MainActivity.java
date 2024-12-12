@@ -67,11 +67,14 @@ public class MainActivity extends AppCompatActivity {
             ParseApplication parseApplication= new ParseApplication();
             parseApplication.parse(s);
 
-            ArrayAdapter<FeedEntry> arrayAdapter = new ArrayAdapter<FeedEntry>(
+/*            ArrayAdapter<FeedEntry> arrayAdapter = new ArrayAdapter<FeedEntry>(
                     MainActivity.this,
                     R.layout.list_item,
                     parseApplication.getApplications());
-            listApps.setAdapter(arrayAdapter);
+            listApps.setAdapter(arrayAdapter);*/
+
+            FeedAdapter feedAdapter = new FeedAdapter(MainActivity.this,R.layout.list_record,parseApplication.getApplications());
+            listApps.setAdapter(feedAdapter);
         }
 
         private String downloadXML(String urlPath){

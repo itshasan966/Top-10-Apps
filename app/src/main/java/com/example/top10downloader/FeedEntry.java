@@ -4,7 +4,7 @@ public class FeedEntry {
     private String name;
     private String releaseDate;
     private String artist;
-    private String summery;
+    private String summary;
     private String imageUrl;
 
 
@@ -24,12 +24,12 @@ public class FeedEntry {
         this.releaseDate = releaseDate;
     }
 
-    public String getSummery() {
-        return summery;
+    public String getSummary() {
+        return summary;
     }
 
-    public void setSummery(String summery) {
-        this.summery = summery;
+    public void setSummary(String summary) {
+        this.summary = summary;
     }
 
     public String getImageUrl() {
@@ -53,6 +53,7 @@ public class FeedEntry {
         return "name=" + name + '\n' +
                 ", releaseDate=" + releaseDate + '\n' +
                 ", artist=" + artist + '\n' +
+                ", summary="+summary +'\n'+
                 ", imageUrl=" + imageUrl + '\n';
     }
 }

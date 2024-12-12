@@ -55,8 +55,8 @@ public class ParseApplication {
                                 currentRecord.setArtist(textValue);
                             } else if ("releaseDate".equalsIgnoreCase(tagName)) {
                                 currentRecord.setReleaseDate(textValue);
-                            } else if ("summery".equalsIgnoreCase(tagName)) {
-                                currentRecord.setSummery(textValue);
+                            } else if ("summary".equalsIgnoreCase(tagName)) {
+                                currentRecord.setSummary(textValue);
                             } else if ("image".equalsIgnoreCase(tagName)) {
                                 currentRecord.setImageUrl(textValue);
                             }
