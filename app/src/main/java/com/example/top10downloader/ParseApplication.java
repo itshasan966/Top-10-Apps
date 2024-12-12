@@ -24,7 +24,6 @@ public class ParseApplication {
         FeedEntry currentRecord = null;
         boolean inEntry =false;
         String textValue = "";
-
         try {
             XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
             factory.setNamespaceAware(true);
@@ -54,8 +53,8 @@ public class ParseApplication {
                                 currentRecord.setName(textValue);
                             } else if ("artist".equalsIgnoreCase(tagName)) {
                                 currentRecord.setArtist(textValue);
-                            } else if ("releaseDate".equalsIgnoreCase(textValue)) {
-                                currentRecord.setReleaseDate(tagName);
+                            } else if ("releaseDate".equalsIgnoreCase(tagName)) {
+                                currentRecord.setReleaseDate(textValue);
                             } else if ("summery".equalsIgnoreCase(tagName)) {
                                 currentRecord.setSummery(textValue);
                             } else if ("image".equalsIgnoreCase(tagName)) {
@@ -67,7 +66,10 @@ public class ParseApplication {
                         // nothing to do
                 }
                 eventType = xpp.next();
-                
+            }
+            for (FeedEntry app:applications){
+                Log.d(TAG, "**************");
+                Log.d(TAG, app.toString());
             }
         }catch (Exception e ){
             status = false;
